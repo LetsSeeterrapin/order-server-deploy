@@ -14,7 +14,7 @@ public class StockInventoryService {
     }
 
 //    상품등록, 주문취소시 increaseStock
-    public int increseStock(Long productId, int quantity) {
+    public int increaseStock(Long productId, int quantity) {
         String remainsObject = redisTemplate.opsForValue().get(String.valueOf(productId));
         if (remainsObject != null) {
             int remains = Integer.parseInt(remainsObject);
